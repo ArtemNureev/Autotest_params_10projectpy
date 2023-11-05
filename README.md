@@ -3,7 +3,7 @@
  Тесты написаны для проверки параметра "name" в запросе на создание "набора товаров" определенного ранее созданного пользователя. 
 - Присутствуют негативные и позитивные тесты
 - Для запуска тестов должны быть установлены пакеты pytest и requests
-- Запуск всех тестов выполянется командой pytest
+- Запуск всех тестов выполянется командой "pytest"
 - Язык - интерпретатор `Python` и среда разработки `PyCharm`
 
 Действия для проверки:
@@ -21,7 +21,7 @@ The tests are written to check the parameter "name" in the request to create a "
 
 Negative and positive tests are present
 The pytest and requests packages must be installed to run the tests
-All tests can be run with the pytest command.
+All tests can be run with the "pytest" command.
 Language - `Python` interpreter and `PyCharm` development environment.
 Actions for testing: Start the Test Bench 
 Example of the test bench address: https://4f995f6a-8ca0-48f9-a4e0-a38e5847a2f5.serverhub.praktikum-services.ru.
