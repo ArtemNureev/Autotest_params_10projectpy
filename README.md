@@ -4,7 +4,7 @@
 - Присутствуют негативные и позитивные тесты
 - Для запуска тестов должны быть установлены пакеты pytest и requests
 - Запуск всех тестов выполянется командой "pytest"
-- Язык - интерпретатор `Python` и среда разработки `PyCharm`
+- Язык - интерпретатор `Python` 3.12  и среда разработки `PyCharm` 2023.2
 
 Действия для проверки:
 Запуск Стенда тестирования
@@ -22,7 +22,7 @@ The tests are written to check the parameter "name" in the request to create a "
 Negative and positive tests are present
 The pytest and requests packages must be installed to run the tests
 All tests can be run with the "pytest" command.
-Language - `Python` interpreter and `PyCharm` development environment.
+Language - `Python` 3.12 interpreter and `PyCharm` 2023.2 development environment.
 Actions for testing: Start the Test Bench 
 Example of the test bench address: https://4f995f6a-8ca0-48f9-a4e0-a38e5847a2f5.serverhub.praktikum-services.ru.
 After startup, enter your test bench address into the `configuration.py` file in the `PyCharm` environment:
