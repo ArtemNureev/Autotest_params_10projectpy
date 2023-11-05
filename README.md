@@ -12,6 +12,7 @@
 
 После запуска внести в файл `configuration.py` в среде `PyCharm` свой адрес стенда:
 URL_SERVICE = "https://4f995f6a-8ca0-48f9-a4e0-a38e5847a2f5.serverhub.praktikum-services.ru"
+
 В Терминале выполнить команду: pytest
 
 # Спасибо за внимание.
