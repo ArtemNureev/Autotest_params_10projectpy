@@ -1,5 +1,5 @@
 # Здравствуйте коллеги
-# Представляю проект авто-тестов на примере API Яндекс Прилавок
+# Проект авто-тестов на примере API Яндекс Прилавок
  Тесты написаны для проверки параметра "name" в запросе на создание "набора товаров" определенного ранее созданного пользователя. 
 - Присутствуют негативные и позитивные тесты
 - Для запуска тестов должны быть установлены пакеты pytest и requests
@@ -16,7 +16,7 @@ URL_SERVICE = "https://4f995f6a-8ca0-48f9-a4e0-a38e5847a2f5.serverhub.praktikum-
 # Спасибо за внимание
 _____________________________________________________________________________________________________________________________________
 # Hello colleagues
-# I present a project of auto-tests on the example of Yandex Shelf API
+# Project of auto-tests on the example of Yandex Shelf API
 The tests are written to check the parameter "name" in the request to create a "set of goods" of a certain previously created user.
 
 Negative and positive tests are present
