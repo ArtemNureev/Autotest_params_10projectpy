@@ -74,7 +74,9 @@ def test_create_kit_512_in_name_get_error_response():
 
 # 10 Параметр не передан в запросе:
 def test_create_kit_no_name_get_error_response():
-    negative_assert(None)
+    current_kit_body_negative = data.kit_body.copy()
+    current_kit_body_negative.pop("name")
+    negative_assert(current_kit_body_negative)
 
 
 #   11 Ошибка. Тип параметра name: число
