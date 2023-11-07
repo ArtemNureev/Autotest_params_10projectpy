@@ -2,6 +2,14 @@ import data
 import sender_stand_request
 
 
+# Функция для негативной проверки, когда в ответе ошибка: "Не переданы необходимые параметры"
+def negative_assert_no_name(kit_body):
+    response = sender_stand_request.post_new_client_kit(kit_body, sender_stand_request.auth_token)
+    assert response.status_code == 400
+    assert response.json()["code"] == 400
+    assert response.json()["message"] == "Не все параметры были переданы"
+
+
 # Функция для изменения значения в параметре name в теле запроса
 def get_kit_body(name):
     current_kit_body = data.kit_body.copy()
@@ -20,11 +28,14 @@ def positive_assert(name):
 # Функция для негативной проверки
 def negative_assert(name):
     kit_body_negative = get_kit_body(name)
-    kit_response = sender_stand_request.post_new_client_kit(kit_body_negative, sender_stand_request.auth_token)
-    assert kit_response.status_code == 400
+    response = sender_stand_request.post_new_client_kit(kit_body_negative, sender_stand_request.auth_token)
+    assert response.status_code == 400
+    assert response.json()["code"] == 400
+    assert response.json()["message"] == "Имя пользователя введено некорректно. " \
+                                         "Имя может содержать только русские или латинские буквы, " \
+                                         "Длина должна быть не менее 1 и не более 511 символов"
 
 
-# Тесты
 # 1 Допустимое количество символов (1):
 def test_create_kit_1_symbol_in_name_get_success_response():
     positive_assert("a")
@@ -61,7 +72,7 @@ def test_create_kit_has_number_in_name_get_success_response():
     positive_assert("123")
 
 
-# 8 Пусто:
+# 8 Количество символов меньше допустимого (0):
 def test_create_kit_empty_name_get_error_response():
     negative_assert("")
 
@@ -73,10 +84,11 @@ def test_create_kit_512_in_name_get_error_response():
 
 
 # 10 Параметр не передан в запросе:
+# Написал новую функцию (сразу после импортов)
 def test_create_kit_no_name_get_error_response():
-    current_kit_body_negative_noname = data.kit_body.copy()
-    current_kit_body_negative_noname.pop("name")
-    negative_assert(current_kit_body_negative_noname)
+    kit_body = data.kit_body.copy()
+    kit_body.pop("name")
+    negative_assert_no_name(kit_body)
 
 
 #   11 Ошибка. Тип параметра name: число
